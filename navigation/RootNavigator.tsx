@@ -4,13 +4,16 @@ import React from 'react';
 
 import Colors from '../constants/Colors';
 import useColorScheme from '../hooks/useColorScheme';
-
 import Home from '../screens/Home';
 import Profile from '../screens/Profile';
 
 export type RootParamList = {
     Home: undefined;
     Profile: undefined;
+};
+
+type TabBarIconProps = {
+    color: string;
 };
 
 export const Root = createBottomTabNavigator<RootParamList>();
@@ -24,7 +27,7 @@ export const RootNavigator = () => {
                 name="Home"
                 component={Home}
                 options={{
-                    tabBarIcon: ({ color }) => <Ionicons size={30} name="home" color={color} />,
+                    tabBarIcon: ({ color }: TabBarIconProps) => <Ionicons size={30} name="home" color={color} />,
                     title: 'Home',
                 }}
             />
@@ -32,7 +35,9 @@ export const RootNavigator = () => {
                 name="Profile"
                 component={Profile}
                 options={{
-                    tabBarIcon: ({ color }) => <Ionicons size={30} name="happy-outline" color={color} />,
+                    tabBarIcon: ({ color }: TabBarIconProps) => (
+                        <Ionicons size={30} name="happy-outline" color={color} />
+                    ),
                     title: 'Profile',
                 }}
             />

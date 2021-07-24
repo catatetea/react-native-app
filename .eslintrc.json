@@ -22,6 +22,7 @@
         "no-console": "warn",
         "@typescript-eslint/explicit-module-boundary-types": "off",
         "react/no-unescaped-entities": "off",
+        "react/display-name": "off",
         "max-params": ["error", 4],
         "import/order": [
             "warn",
