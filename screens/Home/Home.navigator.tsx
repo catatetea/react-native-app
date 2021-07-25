@@ -12,7 +12,7 @@ const HomeStack = createStackNavigator<HomeParamList>();
 export const HomeNavigator = () => {
     return (
         <HomeStack.Navigator>
-            <HomeStack.Screen name="HomeScreen" component={HomeScreen} options={{ title: 'Home Title' }} />
+            <HomeStack.Screen name="HomeScreen" component={HomeScreen} options={{ headerShown: false }} />
         </HomeStack.Navigator>
     );
 };

@@ -1,18 +1,13 @@
 import { StyleSheet } from 'react-native';
 
 export default StyleSheet.create({
-    container: {
+    root: {
         flex: 1,
         alignItems: 'center',
         justifyContent: 'center',
+        backgroundColor: '#f5eeea',
     },
-    title: {
-        fontSize: 20,
-        fontWeight: 'bold',
-    },
-    separator: {
-        marginVertical: 30,
-        height: 1,
-        width: '80%',
+    text: {
+        fontFamily: 'roboto-regular',
     },
 });

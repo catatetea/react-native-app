@@ -12,7 +12,7 @@ const ProfileStack = createStackNavigator<ProfileParamList>();
 export const ProfileNavigator = () => {
     return (
         <ProfileStack.Navigator>
-            <ProfileStack.Screen name="ProfileScreen" component={ProfileScreen} options={{ title: 'Profile Title' }} />
+            <ProfileStack.Screen name="ProfileScreen" component={ProfileScreen} options={{ headerShown: false }} />
         </ProfileStack.Navigator>
     );
 };

@@ -1,4 +1,4 @@
-import { Ionicons } from '@expo/vector-icons';
+import { AntDesign } from '@expo/vector-icons';
 import { createBottomTabNavigator } from '@react-navigation/bottom-tabs';
 import React from 'react';
 
@@ -7,7 +7,7 @@ import useColorScheme from '../hooks/useColorScheme';
 import Home from '../screens/Home';
 import Profile from '../screens/Profile';
 
-export type RootParamList = {
+type RootParamList = {
     Home: undefined;
     Profile: undefined;
 };
@@ -22,22 +22,32 @@ export const RootNavigator = () => {
     const colorScheme = useColorScheme();
 
     return (
-        <Root.Navigator initialRouteName="Home" tabBarOptions={{ activeTintColor: Colors[colorScheme].tint }}>
+        <Root.Navigator
+            initialRouteName="Home"
+            tabBarOptions={{
+                activeTintColor: Colors[colorScheme].tint,
+                showLabel: false,
+                style: {
+                    height: 80,
+                    borderRadius: 20,
+                    margin: 16,
+                    position: 'absolute',
+                    bottom: 0,
+                },
+            }}
+        >
             <Root.Screen
                 name="Home"
                 component={Home}
                 options={{
-                    tabBarIcon: ({ color }: TabBarIconProps) => <Ionicons size={30} name="home" color={color} />,
-                    title: 'Home',
+                    tabBarIcon: ({ color }: TabBarIconProps) => <AntDesign name="home" size={24} color={color} />,
                 }}
             />
             <Root.Screen
                 name="Profile"
                 component={Profile}
                 options={{
-                    tabBarIcon: ({ color }: TabBarIconProps) => (
-                        <Ionicons size={30} name="happy-outline" color={color} />
-                    ),
+                    tabBarIcon: ({ color }: TabBarIconProps) => <AntDesign name="user" size={24} color={color} />,
                     title: 'Profile',
                 }}
             />

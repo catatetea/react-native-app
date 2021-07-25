@@ -12,8 +12,10 @@ import { RootNavigator } from './RootNavigator';
 const Stack = createStackNavigator<RootStackParamList>();
 
 export default function Navigation({ colorScheme }: { colorScheme: ColorSchemeName }) {
+    const theme = colorScheme === 'dark' ? DarkTheme : DefaultTheme;
+
     return (
-        <NavigationContainer linking={LinkingConfiguration} theme={colorScheme === 'dark' ? DarkTheme : DefaultTheme}>
+        <NavigationContainer linking={LinkingConfiguration} theme={theme}>
             <Stack.Navigator screenOptions={{ headerShown: false }}>
                 <Stack.Screen name="Root" component={RootNavigator} />
                 <Stack.Screen name="NotFound" component={NotFoundScreen} options={{ title: 'Oops!' }} />

@@ -1,14 +1,12 @@
 import React from 'react';
+import { ScrollView } from 'react-native';
 
-import EditScreenInfo from '../../components/EditScreenInfo';
-import { Text, View } from '../../components/Themed';
+import Card from '../../components/Card';
 
-import { styles } from './Profile.styles';
+import styles from './Profile.styles';
 
 export const ProfileScreen = () => (
-    <View style={styles.container}>
-        <Text style={styles.title}>Profile</Text>
-        <View style={styles.separator} lightColor="#eee" darkColor="rgba(255,255,255,0.1)" />
-        <EditScreenInfo path="/screens/Profile/index.tsx" />
-    </View>
+    <ScrollView style={styles.root}>
+        <Card balance={523} holderName="Илон Маск" cardNumber="0001" />
+    </ScrollView>
 );
